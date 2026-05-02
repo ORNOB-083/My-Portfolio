@@ -49,7 +49,7 @@ export default function Footer() {
             className="flex flex-col items-center gap-4"
           >
             <p className="text-sm text-[#C9C9C9]/50 flex items-center justify-center gap-2">
-              Built with <FaHeart className="text-[#746465] w-4 h-4" /> by Shalehin Ahmed Ornob
+              Built with <FaHeart className="text-[#746465] w-4 h-4" /> by Shalehin Ahmed Ornob using Next.js
               <span className="mx-2">•</span>
               {currentYear}
             </p>
