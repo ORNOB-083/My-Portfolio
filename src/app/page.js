@@ -1,9 +1,22 @@
-import Image from "next/image";
+"use client";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Skills from "@/components/Skills";
+import Education from "@/components/Education";
+import Projects from "@/components/Projects";
+
+
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      
-    </div>
+    <main className="min-h-screen relative">
+      <Navbar />
+      <section id="home"><Hero /></section>
+      <section id="about"><About /></section>
+      <section id="skills"><Skills /></section>
+      <section id="education"><Education /></section>
+      <section id="projects"><Projects /></section>
+    </main>
   );
 }
