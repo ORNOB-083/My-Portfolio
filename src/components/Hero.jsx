@@ -14,7 +14,6 @@ export default function Hero() {
             className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 bg-[#34353A]"
         >
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                {/* Text Content */}
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -57,7 +56,6 @@ export default function Hero() {
                             <HiDownload size={20} /> Download Resume
                         </a>
 
-                        {/* Social Icons */}
                         <div className="flex items-center gap-3">
                             <a
                                 href="https://www.facebook.com/sa.ornob.79"
@@ -95,7 +93,6 @@ export default function Hero() {
                     </div>
                 </motion.div>
 
-                {/* Photo */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}

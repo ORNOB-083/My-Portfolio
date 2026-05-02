@@ -13,7 +13,6 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Detect scroll for shadow effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -22,7 +21,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu when a link is clicked
   const handleLinkClick = () => {
     setIsOpen(false);
   };
@@ -35,17 +33,17 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src="/logo.png"
+                src="/logo1.png"
                 alt="Logo"
-                width={32}
-                height={32}
+                width={40}
+                height={40}
                 className="rounded-full"
               />
-              
+
             </Link>
           </div>
 
