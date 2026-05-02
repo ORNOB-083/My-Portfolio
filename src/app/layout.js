@@ -4,6 +4,7 @@ import { Providers } from "./providers";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Skills from "@/components/Skills";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
           {children}
           <Hero></Hero>
           <About></About>
+          <Skills></Skills>
         </Providers>
       </body>
     </html>
