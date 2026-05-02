@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+nextjs-portal {
+  display: none !important;
+}
