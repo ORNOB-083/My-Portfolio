@@ -1,15 +1,9 @@
 ## My – Portfolio
 
-# Live Link: https://shalehin-ahmed-ornob.vercel.app/
+A modern, responsive, and animated portfolio website built with **Next.js**, **Tailwind CSS**, and **Framer Motion**. Designed to showcase the work, skills, and personality of myself, a passionate Web Developer.
 
-🌐 Live Demo
-Live URL: https://skillsphere-online-learning-platform.vercel.app
-
-
-
-A modern, responsive, and animated portfolio website built with **Next.js**, **Tailwind CSS**, and **Framer Motion**. Designed to showcase the work, skills, and personality of Shalehin Ahmed Ornob, a passionate Junior Web Developer.
-
-![Portfolio Screenshot](./public/projects/portfolio.png) *\*Replace with a live screenshot of your homepage*
+🌐 Live Demo:
+- **Live URL:** https://shalehin-ahmed-ornob.vercel.app/
 
 ---
 
@@ -41,4 +35,6 @@ A modern, responsive, and animated portfolio website built with **Next.js**, **T
 | Deployment         | [Vercel](https://vercel.com/) (recommended)                                 |
 | Font               | [Inter](https://fonts.google.com/specimen/Inter)                            |
 
+---
 
+![Portfolio Screenshot](./public/projects/portfolio.png) 
