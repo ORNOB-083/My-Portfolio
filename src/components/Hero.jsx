@@ -51,8 +51,6 @@ export default function Hero() {
                         </span>
                     </h1>
 
-                    
-
                     <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#726865] mb-6 h-16 flex justify-center md:justify-start">
                         <Typewriter
                             options={{

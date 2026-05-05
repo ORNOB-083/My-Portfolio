@@ -7,7 +7,7 @@ export const projectsData = [
     shortDesc: "A modern online learning platform to explore courses, watch lessons, and enroll in skill-based programs.",
     stack: ["Next.js", "Tailwind CSS", "DaisyUI", "BetterAuth", "React Toastify"],
     description: "SkillSphere is an online learning platform where users can browse courses, view detailed course pages, and enroll. It features authentication (login/register with email & Google), a protected course details route, a user profile with update functionality, and a responsive layout.",
-    liveLink: "#", // Add live link when deployed
+    liveLink: "https://skillsphere-online-learning-platform.vercel.app",
     githubLink: "https://github.com/ORNOB-083/-SkillSphere-Online-Learning-Platform", 
     challenges: "Integrating BetterAuth with Next.js App Router for authentication was tricky. Managing protected routes and redirects after login took careful planning. Implementing the search functionality with dynamic filtering on the All Courses page also required state management.",
     futurePlans: "Add payment integration, course progress tracking, quiz modules, and a discussion forum for students.",

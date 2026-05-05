@@ -1,15 +1,17 @@
 "use client";
 
+import { useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { FaArrowLeft, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaArrowLeft, FaExternalLinkAlt, FaGithub, FaTimes } from "react-icons/fa";
 import { projectsData } from "@/data/projectsData";
 
 export default function ProjectDetails() {
   const params = useParams();
   const project = projectsData.find((p) => p.id === parseInt(params.id));
+  const [isImageOpen, setIsImageOpen] = useState(false);
 
   if (!project) {
     return (
@@ -36,15 +38,58 @@ export default function ProjectDetails() {
           <FaArrowLeft /> Back to Projects
         </Link>
 
-        {/* Project Image */}
-        <div className="relative h-80 w-full mb-8 rounded-2xl overflow-hidden border border-[#424654]">
+        {/* Project Image - Clickable */}
+        <div 
+          className="relative h-80 w-full mb-8 rounded-2xl overflow-hidden border border-[#424654] cursor-pointer group"
+          onClick={() => setIsImageOpen(true)}
+        >
           <Image
             src={project.image}
             alt={project.title}
             fill
-            className="object-cover object-top"
+            className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
           />
+          <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <span className="text-white text-sm font-medium px-4 py-2 bg-[#746465]/80 rounded-lg">
+              Click to enlarge
+            </span>
+          </div>
         </div>
+
+        {/* Image Lightbox Overlay */}
+        <AnimatePresence>
+          {isImageOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4"
+              onClick={() => setIsImageOpen(false)}
+            >
+              <button
+                onClick={() => setIsImageOpen(false)}
+                className="absolute top-6 right-6 text-white hover:text-[#746465] transition-colors"
+                aria-label="Close image"
+              >
+                <FaTimes size={32} />
+              </button>
+              <motion.div
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.8 }}
+                className="relative max-w-5xl w-full h-[80vh]"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-contain"
+                />
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Title & Tech Stack */}
         <motion.div

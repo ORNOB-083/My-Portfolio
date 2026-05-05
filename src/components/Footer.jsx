@@ -31,7 +31,7 @@ export default function Footer() {
 
             <button
               onClick={scrollToTop}
-              className="group flex items-center gap-2 text-sm text-[#C9C9C9]/40 hover:text-[#746465] transition-colors"
+              className="group flex items-center gap-2 text-sm text-red-400/100 hover:text-[#C9C9C9]/40 transition-colors"
             >
               <span>Back to Top</span>
               <FaArrowUp className="w-3 h-3 group-hover:-translate-y-1 transition-transform" />
