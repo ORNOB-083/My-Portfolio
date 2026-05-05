@@ -36,4 +36,6 @@ A modern, responsive, and animated portfolio website built with **Next.js**, **T
 
 ---
 
+# 🏠Portfolio Screenshot:
+
 ![Portfolio Screenshot](./public/projects/portfolio.png) 
