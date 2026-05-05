@@ -2,7 +2,6 @@
 
 A modern, responsive, and animated portfolio website built with **Next.js**, **Tailwind CSS**, and **Framer Motion**. Designed to showcase the work, skills, and personality of myself, a passionate Web Developer.
 
-🌐 Live Demo:
 - **Live URL:** https://shalehin-ahmed-ornob.vercel.app/
 
 ---
