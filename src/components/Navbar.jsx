@@ -27,23 +27,24 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#34353A]/90 shadow-lg" : "bg-[#34353A]/70"
-      } backdrop-blur-md border-b border-[#424654] animate__animated animate__fadeInDown`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-[#34353A]/90 shadow-lg" : "bg-[#34353A]/70"
+        } backdrop-blur-md border-b border-[#424654] animate__animated animate__fadeInDown`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
 
-          <div className="flex items-center">
+          <div className="flex items-center gap-3">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src="/logo.png"
+                src="/letter-s (1).png"
                 alt="Logo"
                 width={40}
                 height={40}
-                className="rounded-full"
+                className="rounded-full ring-2"
               />
-
+              <span className="text-3xl font-bold  tracking-tight bg-gradient-to-r from-[#ff00cc] to-[#333399] bg-clip-text text-transparent">
+                ORNOB
+              </span>
             </Link>
           </div>
 

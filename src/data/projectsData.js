@@ -1,20 +1,46 @@
 export const projectsData = [
-  // ─── Project 1: SkillSphere ───
+  // ─── Project 1: StudyNook ───
   {
     id: 1,
+    title: "StudyNook – Study Room Booking Platform",
+    image: "/projects/study-nook.png",
+    shortDesc: "A full-stack study room booking platform where students can discover, book, and manage study spaces in real time.",
+    stack: ["Next.js", "Tailwind CSS", "Framer Motion", "Better Auth", "React Hot Toast", "MongoDB", "Express.js", "JWT", "JWKS"],
+    description: "StudyNook is a full-stack study room booking platform built with Next.js, Node.js, Express, and MongoDB. It allows students, researchers, and library users to explore, book, and manage study spaces with real-time availability. The platform features secure JWT authentication stored in HTTP-only cookies, conflict-free booking with automatic time-slot validation, full CRUD operations for room owners, and a responsive dashboard to track bookings, cancellations, and listed rooms. Built with a focus on security, user experience, and deployment readiness.",
+    liveLink: "https://study-nook-083.vercel.app",
+    githubLink: "https://github.com/ORNOB-083/PH-B13-A9-StudyNook-Library-Study-Room-Booking",
+    challenges: "Implementing JWT authentication with HTTP-only cookies and JWKS verification using Better Auth was a significant learning curve. Managing the authentication state across the entire application and ensuring protected routes worked correctly required careful planning. The booking conflict detection with MongoDB operators also needed precise query logic to prevent overlaps effectively.",
+    futurePlans: "Add email notifications for booking confirmations and reminders, integrate payment processing for hourly rates, implement a calendar view for room availability, and add a rating/review system for rooms.",
+  },
+  // ─── Project 2: SkillSphere ───
+  {
+    id: 2,
     title: "SkillSphere – Online Learning Platform",
-    image: "/projects/skillsphere.png", // Add screenshot
+    image: "/projects/skillsphere.png",
     shortDesc: "A modern online learning platform to explore courses, watch lessons, and enroll in skill-based programs.",
     stack: ["Next.js", "Tailwind CSS", "DaisyUI", "BetterAuth", "React Toastify"],
     description: "SkillSphere is an online learning platform where users can browse courses, view detailed course pages, and enroll. It features authentication (login/register with email & Google), a protected course details route, a user profile with update functionality, and a responsive layout.",
     liveLink: "https://skillsphere-online-learning-platform.vercel.app",
-    githubLink: "https://github.com/ORNOB-083/-SkillSphere-Online-Learning-Platform", 
+    githubLink: "https://github.com/ORNOB-083/-SkillSphere-Online-Learning-Platform",
     challenges: "Integrating BetterAuth with Next.js App Router for authentication was tricky. Managing protected routes and redirects after login took careful planning. Implementing the search functionality with dynamic filtering on the All Courses page also required state management.",
     futurePlans: "Add payment integration, course progress tracking, quiz modules, and a discussion forum for students.",
   },
-  // ─── Project 2: KeenKeeper ───
+  // ─── Project 3: MediScan AI ───
   {
-    id: 2,
+    id: 3,
+    title: "MediScan AI – AI Health Triage System",
+    image: "/projects/MediScan-AI.png",
+    shortDesc: "Multi-modal AI health triage system supporting symptom text, Bengali voice commands, and medical scan uploads (X-ray, MRI, CT, blood reports).",
+    stack: ["Next.js 15", "React 19", "Tailwind CSS v4", "DaisyUI v5", "Node.js", "FastAPI", "MongoDB", "Gemini 2.5 Flash", "Better Auth", "Docker"],
+    description: "MediScan AI is a complete health triage platform designed for Bangladesh. Users can describe symptoms via text or Bengali voice, upload medical scans (X-ray, MRI, CT, blood test images), and receive AI-powered preliminary diagnoses and risk assessments. Features include a dashboard, scan upload flow with drag-and-drop, real-time analysis results, diagnostic history, and a symptom checker with voice input. Built with Next.js 15 (frontend) and FastAPI (backend), using Gemini 2.5 Flash for multimodal analysis.",
+    liveLink: "#",
+    githubLink: "https://github.com/ORNOB-083/Ai-Health-Diagnostic-System-spdd-Lab",
+    challenges: "Integrating Bengali voice recognition with real-time transcription was complex due to limited libraries. Handling large medical image uploads (up to 10MB) and processing them through Gemini API while maintaining performance required careful optimisation. Managing authentication state across the dashboard and scan history also posed challenges.",
+    futurePlans: "Add support for more scan types (ultrasound, pathology slides), offline mode for rural areas, integration with local hospital APIs, and multi-language support (Chittagonian, Sylheti).",
+  },
+  // ─── Project 4: KeenKeeper ───
+  {
+    id: 4,
     title: "KeenKeeper – Personal Relationship Management",
     image: "/projects/keen-keeper.png",
     shortDesc: "A sophisticated PRM tool to help users maintain consistent connections with their network.",
@@ -25,9 +51,9 @@ export const projectsData = [
     challenges: "Building the interactive charts with Recharts and making them responsive was challenging. Also, managing the status badges (Overdue, Almost Due, On-Track) with real-time updates required careful state management.",
     futurePlans: "Add reminders for follow-ups, integration with calendar APIs and AI-powered relationship insights.",
   },
-  // ─── Project 3: DigiTools ───
+  // ─── Project 5: DigiTools ───
   {
-    id: 3,
+    id: 5,
     title: "DigiTools – Digital Tools Marketplace",
     image: "/projects/digitools.png",
     shortDesc: "A modern digital tools marketplace where users can browse and purchase productivity tools.",
@@ -38,22 +64,22 @@ export const projectsData = [
     challenges: "Managing the cart state across different components without a global state management tool was tricky. Ensuring the cart updates instantly when items are added or removed required careful state synchronization.",
     futurePlans: "Add user authentication, payment gateway integration, product reviews, and a wishlist feature.",
   },
-  // ─── Project 4: SavePaws Club ───
+  // ─── Project 6: SavePaws Club ───
   {
-    id: 4,
+    id: 6,
     title: "SavePaws Club – Animal Rescue Platform",
     image: "/projects/savepaws.png",
     shortDesc: "A web-based platform to report and rescue animals with live location sharing.",
     stack: ["PHP", "HTML", "CSS", "JavaScript", "MySQL", "Google Maps API"],
     description: "SavePaws Club helps report and rescue animals by sharing live locations and contacting rescue teams. It offers offline emergency info, pet adoption, marketplace, vet consultations, blogs, and volunteering opportunities.",
-    liveLink: "#", // Add live link 
+    liveLink: "#",
     githubLink: "https://github.com/ORNOB-083/Software-Engineering-and-System-Analysis-Project",
     challenges: "Integrating Google Maps API for live location tracking was complex. Building the emergency offline mode that works without internet required creative solutions using local storage and service workers.",
     futurePlans: "Add GPS rescue vans tracking, volunteer training modules, a mobile app, and multi-language support.",
   },
-  // ─── Project 5: GitHub Issue Tracker ───
+  // ─── Project 7: GitHub Issue Tracker ───
   {
-    id: 5,
+    id: 7,
     title: "GitHub Issue Tracker",
     image: "/projects/github-issue-tracker.png",
     shortDesc: "A web app to track GitHub issues with filtering, searching, and detailed views.",
@@ -64,9 +90,9 @@ export const projectsData = [
     challenges: "Handling the API calls and managing the loading states elegantly was tough. Implementing the search functionality while keeping the tabs functional required careful logic to avoid breaking the filtering system.",
     futurePlans: "Add pagination, user authentication, ability to create/edit issues, and real-time updates via WebSockets.",
   },
-  // ─── Project 6: Job Tracker ───
+  // ─── Project 8: Job Tracker ───
   {
-    id: 6,
+    id: 8,
     title: "Job Tracker",
     image: "/projects/job-tracker.png",
     shortDesc: "A job application tracker with interview and rejection management.",

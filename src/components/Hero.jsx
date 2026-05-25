@@ -25,11 +25,11 @@ export default function Hero() {
                         {/* Clean Inner Circle */}
                         <div className="w-full h-full rounded-full overflow-hidden bg-[#34353A]">
                             <Image
-                                src="/profile.png"
+                                src="/profile_3.jpg"
                                 alt=""
                                 width={400}
                                 height={400}
-                                className="object-cover w-full h-full scale-110"
+                                className="object-cover w-full h-full"
                                 priority
                             />
                         </div>
@@ -74,7 +74,7 @@ export default function Hero() {
 
                     <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center md:justify-start items-center">
                         <a
-                            href="/resume.pdf"
+                            href="/Shalehin_Ahmed_Ornob_Resume.pdf"
                             download
                             className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#746465] to-[#9a7a7b] hover:from-[#5C5051] hover:to-[#8a6b6c] text-white rounded-lg transition-all shadow-lg hover:shadow-[#746465]/50"
                         >
