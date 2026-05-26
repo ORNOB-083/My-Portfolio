@@ -25,8 +25,8 @@ export default function Footer() {
           >
             
             <div className="text-center">
-              <h3 className="text-3xl font-bold text-white">Shalehin Ahmed Ornob</h3>
-              <p className="text-medium text-[#C9C9C9]/60 mt-1 tracking-wide">Junior Web Developer</p>
+              <h3 className="text-3xl font-bold bg-gradient-to-r from-[#ff00cc] to-[#333399] bg-clip-text text-transparent">Shalehin Ahmed Ornob</h3>
+              <p className="text-medium text-[#C9C9C9]/60 mt-1 tracking-wide">Full Stack Developer</p>
             </div>
 
             <button

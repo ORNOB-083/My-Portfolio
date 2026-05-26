@@ -38,22 +38,9 @@ export const projectsData = [
     challenges: "Integrating Bengali voice recognition with real-time transcription was complex due to limited libraries. Handling large medical image uploads (up to 10MB) and processing them through Gemini API while maintaining performance required careful optimisation. Managing authentication state across the dashboard and scan history also posed challenges.",
     futurePlans: "Add support for more scan types (ultrasound, pathology slides), offline mode for rural areas, integration with local hospital APIs, and multi-language support (Chittagonian, Sylheti).",
   },
-  // ─── Project 4: KeenKeeper ───
+  // ─── Project 4: DigiTools ───
   {
     id: 4,
-    title: "KeenKeeper – Personal Relationship Management",
-    image: "/projects/keen-keeper.png",
-    shortDesc: "A sophisticated PRM tool to help users maintain consistent connections with their network.",
-    stack: ["Next.js", "Tailwind CSS", "React Icons", "Recharts", "React Toastify"],
-    description: "KeenKeeper is a Personal Knowledge Vault for tracking interactions and ensuring no important relationship is overlooked. Features a dynamic friendship dashboard, interaction timeline, and advanced analytics with donut charts.",
-    liveLink: "https://keen-keeper-083.vercel.app/",
-    githubLink: "https://github.com/ORNOB-083/PH-B13-A07-Keen-Keeper",
-    challenges: "Building the interactive charts with Recharts and making them responsive was challenging. Also, managing the status badges (Overdue, Almost Due, On-Track) with real-time updates required careful state management.",
-    futurePlans: "Add reminders for follow-ups, integration with calendar APIs and AI-powered relationship insights.",
-  },
-  // ─── Project 5: DigiTools ───
-  {
-    id: 5,
     title: "DigiTools – Digital Tools Marketplace",
     image: "/projects/digitools.png",
     shortDesc: "A modern digital tools marketplace where users can browse and purchase productivity tools.",
@@ -63,6 +50,19 @@ export const projectsData = [
     githubLink: "https://github.com/ORNOB-083/PH-B13-A6-DigiTools-Platform",
     challenges: "Managing the cart state across different components without a global state management tool was tricky. Ensuring the cart updates instantly when items are added or removed required careful state synchronization.",
     futurePlans: "Add user authentication, payment gateway integration, product reviews, and a wishlist feature.",
+  },
+  // ─── Project 5: 8-Puzzle Solver ───
+  {
+    id: 5,
+    title: "8-Puzzle Solver – AI-Powered Puzzle Game",
+    image: "/projects/puzzle-solver.png",
+    shortDesc: "An interactive 8-puzzle game with an AI hint system powered by BFS, Best-First Search, and A* algorithms, built with Next.js and Python FastAPI.",
+    stack: ["Next.js", "Tailwind CSS", "Framer Motion", "React Icons", "React Toastify", "Python", "FastAPI", "qrcode"],
+    description: "8-Puzzle Solver is a full-stack AI puzzle game where users play the classic 3×3 sliding tile puzzle and can request AI-powered hints showing the minimum moves needed to solve it. The backend implements three search algorithms — BFS (uninformed), Best-First Search (greedy), and A* (optimal with Manhattan distance heuristic). A solvability checker ensures only valid puzzles are generated. Users can also share any puzzle state with friends via a generated QR code. The frontend is built with Next.js and the backend with Python FastAPI, connected via REST API and deployed on Vercel and Render.",
+    liveLink: "https://puzzle-solver-uits-5b.vercel.app",
+    githubLink: "https://github.com/ORNOB-083/AI-Lab-Project-Puzzle-Solver",
+    challenges: "Implementing the A* algorithm with an admissible Manhattan distance heuristic and correctly reconstructing the solution path using a parent dictionary was the core challenge. Handling the Next.js hydration mismatch caused by Math.random() running on both server and client required initializing the board with a fixed state and shuffling only inside useEffect. Setting up CORS correctly between the Vercel frontend and Render backend (trailing slash issue) also took debugging.",
+    futurePlans: "Add 15-puzzle mode (4×4 grid), animated step-by-step solution replay, side-by-side algorithm comparison showing nodes explored and time taken, and a leaderboard for fastest manual solves.",
   },
   // ─── Project 6: SavePaws Club ───
   {
@@ -77,9 +77,22 @@ export const projectsData = [
     challenges: "Integrating Google Maps API for live location tracking was complex. Building the emergency offline mode that works without internet required creative solutions using local storage and service workers.",
     futurePlans: "Add GPS rescue vans tracking, volunteer training modules, a mobile app, and multi-language support.",
   },
-  // ─── Project 7: GitHub Issue Tracker ───
+  // ─── Project 7: KeenKeeper ───
   {
     id: 7,
+    title: "KeenKeeper – Personal Relationship Management",
+    image: "/projects/keen-keeper.png",
+    shortDesc: "A sophisticated PRM tool to help users maintain consistent connections with their network.",
+    stack: ["Next.js", "Tailwind CSS", "React Icons", "Recharts", "React Toastify"],
+    description: "KeenKeeper is a Personal Knowledge Vault for tracking interactions and ensuring no important relationship is overlooked. Features a dynamic friendship dashboard, interaction timeline, and advanced analytics with donut charts.",
+    liveLink: "https://keen-keeper-083.vercel.app/",
+    githubLink: "https://github.com/ORNOB-083/PH-B13-A07-Keen-Keeper",
+    challenges: "Building the interactive charts with Recharts and making them responsive was challenging. Also, managing the status badges (Overdue, Almost Due, On-Track) with real-time updates required careful state management.",
+    futurePlans: "Add reminders for follow-ups, integration with calendar APIs and AI-powered relationship insights.",
+  },
+  // ─── Project 8: GitHub Issue Tracker ───
+  {
+    id: 8,
     title: "GitHub Issue Tracker",
     image: "/projects/github-issue-tracker.png",
     shortDesc: "A web app to track GitHub issues with filtering, searching, and detailed views.",
@@ -90,9 +103,9 @@ export const projectsData = [
     challenges: "Handling the API calls and managing the loading states elegantly was tough. Implementing the search functionality while keeping the tabs functional required careful logic to avoid breaking the filtering system.",
     futurePlans: "Add pagination, user authentication, ability to create/edit issues, and real-time updates via WebSockets.",
   },
-  // ─── Project 8: Job Tracker ───
+  // ─── Project 9: Job Tracker ───
   {
-    id: 8,
+    id: 9,
     title: "Job Tracker",
     image: "/projects/job-tracker.png",
     shortDesc: "A job application tracker with interview and rejection management.",

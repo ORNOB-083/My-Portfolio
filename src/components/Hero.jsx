@@ -56,7 +56,7 @@ export default function Hero() {
                             options={{
                                 strings: [
                                     "Junior Web Developer",
-                                    "Frontend Developer",
+                                    "Full Stack Developer",
                                     "React Developer",
                                     "Next.js Developer",
                                 ],
