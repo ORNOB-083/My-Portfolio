@@ -4,7 +4,8 @@ import "animate.css";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Typewriter from "typewriter-effect";
-import { FaGithub, FaLinkedin, FaFacebook, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { HiDownload } from "react-icons/hi";
 
 export default function Hero() {
@@ -115,7 +116,7 @@ export default function Hero() {
                                 rel="noopener noreferrer"
                                 className="p-3 border border-[#C9C9C9]/30 rounded-full hover:bg-[#746465] hover:border-[#746465] transition-all text-[#C9C9C9] hover:text-white"
                             >
-                                <FaTwitter size={20} />
+                                <FaXTwitter size={20} />
                             </a>
                         </div>
                     </div>
