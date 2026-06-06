@@ -2,7 +2,7 @@
 
 import "animate.css";
 import { motion } from "framer-motion";
-import { FaGraduationCap, FaMapMarkerAlt, FaBriefcase, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGraduationCap, FaMapMarkerAlt, FaBriefcase, FaExternalLinkAlt, FaSearch } from "react-icons/fa";
 
 export default function Education() {
   return (
@@ -17,7 +17,7 @@ export default function Education() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl font-bold text-white">
-            Education & <span className="bg-gradient-to-r from-[#746465] to-[#C9C9C9] bg-clip-text text-transparent">Experience</span>
+            Education & <span className="bg-gradient-to-r from-[#746465] to-[#C9C9C9] bg-clip-text text-transparent">Career</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#746465] to-[#C9C9C9] mx-auto mt-4 rounded-full"></div>
         </motion.div>
@@ -84,7 +84,7 @@ export default function Education() {
             </div>
           </motion.div>
 
-          {/* Experience Column */}
+          {/* Career / Open to Work Column */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -93,28 +93,39 @@ export default function Education() {
             className="space-y-6"
           >
             <div className="flex items-center gap-3 mb-6">
-              <FaBriefcase className="w-8 h-8 text-[#746465]" />
-              <h3 className="text-2xl font-semibold text-white">Experience</h3>
+              <FaSearch className="w-8 h-8 text-[#746465]" />
+              <h3 className="text-2xl font-semibold text-white">Open to Work</h3>
             </div>
 
-            {/* 29 Tech Info */}
             <div className="bg-[#424654]/30 border border-[#424654] rounded-xl p-6 hover:border-[#746465] transition-all duration-300">
               <div className="flex justify-between items-start mb-2">
-                <h4 className="text-xl font-medium text-white">Junior Web Developer</h4>
-                <span className="text-sm bg-[#746465] text-white px-3 py-1 rounded-full">2024 - 2025</span>
+                <h4 className="text-xl font-medium text-white">🚀 Seeking New Opportunities</h4>
               </div>
               <div className="flex items-center gap-2 text-[#D1D5DB] text-sm mb-3">
                 <FaMapMarkerAlt className="w-4 h-4 text-[#746465]" />
-                <a href="https://www.facebook.com/29TechInfo/about/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-[#746465] transition-colors text-white hover:text-[#746465]">
-                  <span>29 Tech Info</span>
-                  <FaExternalLinkAlt className="w-3 h-3" />
+                <span>Dhaka, Bangladesh (Remote / Hybrid)</span>
+              </div>
+              <p className="text-[#D1D5DB] text-sm leading-relaxed mb-4">
+                I am a passionate Junior Web Developer currently seeking entry-level roles in <span className="text-white font-medium">Frontend</span> or <span className="text-white font-medium">Full Stack</span> development.
+              </p>
+              <p className="text-[#D1D5DB] text-sm leading-relaxed mb-4">
+                I bring strong skills in <span className="text-white font-medium">React.js</span>, <span className="text-white font-medium">Next.js</span>, and <span className="text-white font-medium">Tailwind CSS</span>, along with a keen eye for UI/UX and a passion for clean code.
+              </p>
+              <div className="flex flex-wrap gap-3 pt-2 border-t border-[#424654]/50">
+                <a
+                  href="#contact"
+                  className="flex items-center gap-1 px-4 py-2 bg-[#746465] hover:bg-[#5C5051] text-white rounded-lg transition-colors text-sm"
+                >
+                  <FaBriefcase className="w-4 h-4" /> Hire Me
+                </a>
+                <a
+                  href="/Shalehin_Ahmed_Ornob_Resume.pdf"
+                  download
+                  className="flex items-center gap-1 px-4 py-2 border border-[#746465] text-[#C9C9C9] hover:bg-[#746465] hover:text-white rounded-lg transition-colors text-sm"
+                >
+                  <FaExternalLinkAlt className="w-4 h-4" /> Download Resume
                 </a>
               </div>
-              <ul className="list-disc list-inside text-[#D1D5DB] text-sm space-y-1 leading-relaxed">
-                <li>Developed and maintained responsive web applications using HTML & CSS.</li>
-                <li>Collaborated with team members to translate design requirements into functional code.</li>
-                <li>Managed modern frontend tools effectively.</li>
-              </ul>
             </div>
           </motion.div>
         </div>
