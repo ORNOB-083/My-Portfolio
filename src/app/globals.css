@@ -1,6 +1,13 @@
 @import "tailwindcss";
-@plugin "daisyui";
+/* @plugin "daisyui"; */
 
 nextjs-portal {
   display: none !important;
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+/* Smooth theme transition for everything */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }

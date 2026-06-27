@@ -4,7 +4,6 @@ import { Providers } from "./providers";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -14,12 +13,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.className} bg-[#34353A] text-[#C9C9C9] overflow-x-hidden`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.className} bg-[#f5e6ff] dark:bg-[#0f0a1a] text-[#3b0764] dark:text-[#e9d5ff] overflow-x-hidden transition-colors duration-300`}>
         <Providers>
-          <Navbar></Navbar>
+          <Navbar />
           {children}
-          <Footer></Footer>
+          <Footer />
         </Providers>
       </body>
     </html>
