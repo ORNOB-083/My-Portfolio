@@ -7,7 +7,7 @@ export const projectsData = [
     shortDesc: "A full-stack travel ticket booking platform for bus, train, launch & plane across Bangladesh.",
     stack: ["Next.js", "React", "Tailwind CSS", "MongoDB", "Express.js", "Better Auth", "Stripe", "HeroUI", "Framer Motion"],
     description: "Ghurni is a complete online ticket booking platform built with the MERN stack + Next.js. It supports three user roles — Traveller, Vendor, and Admin. Travellers can browse, search, filter, and book tickets. Vendors can add and manage their tickets with admin approval. Admins can manage users, approve tickets, advertise featured tickets on the homepage, and monitor platform stats. Stripe integration handles secure payments with BDT conversion.",
-    liveLink: "https://ghurni.vercel.app",
+    liveLink: "https://ghurni-083.vercel.app",
     githubLink: "https://github.com/ORNOB-083/Ghurni-Online-Ticket-Booking-Platform",
     challenges: "Implementing session-based JWT auth with Better Auth across both Next.js server components and Express.js API was tricky. Route ordering in Express (advertised route before :id), CORS configuration on Vercel deployment, and real-time countdown timers synced with departure dates were key challenges. Dark/light mode with transparent navbar on scroll also required careful state management.",
     futurePlans: "Add PDF ticket download after payment, live seat map for bus routes, SMS notifications for booking updates, and React Hook Form for better form validation.",
