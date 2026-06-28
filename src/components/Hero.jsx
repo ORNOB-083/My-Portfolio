@@ -13,8 +13,24 @@ export default function Hero() {
     const [particles, setParticles] = useState([]);
     const [mediumBubbles, setMediumBubbles] = useState([]);
 
+    // Variants for the "one-by-one" text animation
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.4, // 0.4 seconds between each text element
+            },
+        },
+    };
+
+    const childVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    };
+
     useEffect(() => {
-        // Small glowing particles
+        // Small glowing particles (UNCOMMENTED AND ACTIVE)
         const generatedParticles = [...Array(15)].map((_, i) => ({
             id: i,
             top: `${Math.random() * 100}%`,
@@ -25,12 +41,12 @@ export default function Hero() {
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setParticles(generatedParticles);
 
-        // Medium bubbles (Increased size and better visibility)
+        // Medium bubbles (COMMENTED OUT FOR NOW)
         /* const generatedBubbles = [...Array(5)].map((_, i) => ({
             id: `bubble-${i}`,
             top: `${Math.random() * 100}%`,
             left: `${Math.random() * 100}%`,
-            size: `${40 + Math.random() * 40}px`, // Increased size: between 40px and 80px
+            size: `${40 + Math.random() * 40}px`,
             duration: `${15 + Math.random() * 10}s`,
             delay: `${Math.random() * 10}s`,
         }));
@@ -103,24 +119,6 @@ export default function Hero() {
                 ))}
             </div>
 
-            {/* MEDIUM SIZE BUBBLES */}
-            <div className="absolute inset-0 pointer-events-none z-0">
-                {mediumBubbles.map((bubble) => (
-                    <div
-                        key={bubble.id}
-                        className="absolute rounded-full bg-gradient-to-r from-[#c026d3] to-[#7c3aed] dark:from-[#e879f9] dark:to-[#a78bfa] blur-[50px] opacity-40 dark:opacity-60 mix-blend-screen"
-                        style={{
-                            width: bubble.size,
-                            height: bubble.size,
-                            top: bubble.top,
-                            left: bubble.left,
-                            animation: `float-bubble ${bubble.duration} ease-in-out infinite`,
-                            animationDelay: bubble.delay,
-                        }}
-                    />
-                ))}
-            </div>
-
             {/* 🎯 MAIN CONTENT */}
             <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
@@ -145,22 +143,26 @@ export default function Hero() {
                     </div>
                 </motion.div>
 
-                {/* Text Section */}
+                {/* ✨ Text Section - Staggered One-By-One Animation */}
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
                     className="order-2 md:order-1 text-center md:text-left"
                 >
-                    <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold mb-4 leading-tight">
-                        <span className="text-[#6b21a8] dark:text-[#c4b5fd] transition-colors duration-300">Hello, I&apos;m</span>
-                        <br />
-                        <span className="text-4xl sm:text-5xl lg:text-5xl bg-gradient-to-r from-[#c026d3] to-[#7c3aed] dark:from-[#e879f9] dark:to-[#a78bfa] bg-clip-text text-transparent transition-colors duration-300">
-                            Shalehin Ahmed Ornob
-                        </span>
-                    </h1>
+                    {/* 1. Greeting */}
+                    <motion.div variants={childVariants}>
+                        <h1 className="text-3xl sm:text-4xl md:text-4xl font-bold mb-4 leading-tight">
+                            <span className="text-[#6b21a8] dark:text-[#c4b5fd] transition-colors duration-300">Hello, I&apos;m</span>
+                            <br />
+                            <span className="text-4xl sm:text-5xl lg:text-5xl bg-gradient-to-r from-[#c026d3] to-[#7c3aed] dark:from-[#e879f9] dark:to-[#a78bfa] bg-clip-text text-transparent transition-colors duration-300">
+                                Shalehin Ahmed Ornob
+                            </span>
+                        </h1>
+                    </motion.div>
 
-                    <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#6b21a8] dark:text-[#c4b5fd] mb-6 h-16 flex justify-center md:justify-start transition-colors duration-300">
+                    {/* 2. Typewriter (Role) */}
+                    <motion.div variants={childVariants} className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#6b21a8] dark:text-[#c4b5fd] mb-6 h-16 flex justify-center md:justify-start transition-colors duration-300">
                         <Typewriter
                             options={{
                                 strings: [
@@ -173,20 +175,27 @@ export default function Hero() {
                                 deleteSpeed: 50,
                             }}
                         />
-                    </div>
+                    </motion.div>
 
-                    <p className="text-base sm:text-lg text-[#6b21a8]/80 dark:text-[#c4b5fd]/80 mb-8 max-w-lg mx-auto md:mx-0 transition-colors duration-300">
+                    {/* 3. Description */}
+                    <motion.p variants={childVariants} className="text-base sm:text-lg text-[#6b21a8] dark:text-[#c4b5fd] mb-8 max-w-lg mx-auto md:mx-0 transition-colors duration-300">
                         Passionate about building smooth, user-friendly, and responsive web interfaces using JavaScript, React, and Next.js.
-                    </p>
+                    </motion.p>
 
-                    <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center md:justify-start items-center">
+                    {/* 4. Buttons & Socials (With motion.a effects) */}
+                    <motion.div variants={childVariants} className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center md:justify-start items-center">
+                        {/* Download CV Button with Pulse & Hover */}
                         <motion.a
                             href="/Shalehin_Ahmed_Ornob_Resume.pdf"
                             download
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             animate={{
-                                boxShadow: ["0px 0px 0px 0px rgba(192, 132, 252, 0.4)", "0px 0px 25px 10px rgba(192, 132, 252, 0.25)", "0px 0px 0px 0px rgba(192, 132, 252, 0.4)"]
+                                boxShadow: [
+                                    "0px 0px 0px 0px rgba(192, 132, 252, 0.4)",
+                                    "0px 0px 25px 10px rgba(192, 132, 252, 0.25)",
+                                    "0px 0px 0px 0px rgba(192, 132, 252, 0.4)"
+                                ]
                             }}
                             transition={{ boxShadow: { duration: 2.5, repeat: Infinity } }}
                             className="group flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#c026d3] to-[#7c3aed] dark:from-[#e879f9] dark:to-[#a78bfa] hover:from-[#c084fc] hover:to-[#7c3aed] dark:hover:from-[#c084fc] dark:hover:to-[#a78bfa] text-white font-medium shadow-lg transition-all duration-300"
@@ -195,7 +204,8 @@ export default function Hero() {
                             <span>Download CV</span>
                         </motion.a>
 
-                        <div className="flex items-center gap-3">
+                        {/* Social Icons with Hover & Tap Effects */}
+                        <div className="flex items-center gap-3 sm:mb-5">
                             <motion.a href="https://www.facebook.com/sa.ornob.79" target="_blank" rel="noopener noreferrer" title="Facebook" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="p-3 border border-[#c084fc]/50 dark:border-[#7c3aed]/50 rounded-full bg-transparent hover:bg-[#c026d3] dark:hover:bg-[#e879f9] hover:border-[#c026d3] dark:hover:border-[#e879f9] hover:text-white dark:hover:text-[#1a1525] text-[#6b21a8] dark:text-[#c4b5fd] transition-all duration-300"><FaFacebook size={20} /></motion.a>
 
                             <motion.a href="https://github.com/ORNOB-083" target="_blank" rel="noopener noreferrer" title="GitHub" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="p-3 border border-[#c084fc]/50 dark:border-[#7c3aed]/50 rounded-full bg-transparent hover:bg-[#c026d3] dark:hover:bg-[#e879f9] hover:border-[#c026d3] dark:hover:border-[#e879f9] hover:text-white dark:hover:text-[#1a1525] text-[#6b21a8] dark:text-[#c4b5fd] transition-all duration-300"><FaGithub size={20} /></motion.a>
@@ -204,7 +214,7 @@ export default function Hero() {
 
                             <motion.a href="https://x.com/Saornob_08" target="_blank" rel="noopener noreferrer" title="X (Twitter)" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="p-3 border border-[#c084fc]/50 dark:border-[#7c3aed]/50 rounded-full bg-transparent hover:bg-[#c026d3] dark:hover:bg-[#e879f9] hover:border-[#c026d3] dark:hover:border-[#e879f9] hover:text-white dark:hover:text-[#1a1525] text-[#6b21a8] dark:text-[#c4b5fd] transition-all duration-300"><FaXTwitter size={20} /></motion.a>
                         </div>
-                    </div>
+                    </motion.div>
                 </motion.div>
             </div>
         </section>
