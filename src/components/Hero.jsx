@@ -120,7 +120,7 @@ export default function Hero() {
             </div>
 
             {/* 🎯 MAIN CONTENT */}
-            <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-5">
 
                 {/* Image Section */}
                 <motion.div
@@ -205,7 +205,7 @@ export default function Hero() {
                         </motion.a>
 
                         {/* Social Icons with Hover & Tap Effects */}
-                        <div className="flex items-center gap-3 sm:mb-5">
+                        <div className="flex items-center gap-3">
                             <motion.a href="https://www.facebook.com/sa.ornob.79" target="_blank" rel="noopener noreferrer" title="Facebook" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="p-3 border border-[#c084fc]/50 dark:border-[#7c3aed]/50 rounded-full bg-transparent hover:bg-[#c026d3] dark:hover:bg-[#e879f9] hover:border-[#c026d3] dark:hover:border-[#e879f9] hover:text-white dark:hover:text-[#1a1525] text-[#6b21a8] dark:text-[#c4b5fd] transition-all duration-300"><FaFacebook size={20} /></motion.a>
 
                             <motion.a href="https://github.com/ORNOB-083" target="_blank" rel="noopener noreferrer" title="GitHub" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="p-3 border border-[#c084fc]/50 dark:border-[#7c3aed]/50 rounded-full bg-transparent hover:bg-[#c026d3] dark:hover:bg-[#e879f9] hover:border-[#c026d3] dark:hover:border-[#e879f9] hover:text-white dark:hover:text-[#1a1525] text-[#6b21a8] dark:text-[#c4b5fd] transition-all duration-300"><FaGithub size={20} /></motion.a>
