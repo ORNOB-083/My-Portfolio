@@ -41,7 +41,6 @@ export default function Skills() {
       percentage: 70,
       skills: [
         "Git & GitHub",
-        "Lenis",
         "DaisyUI",
         "HeroUI",
         "React Icons",

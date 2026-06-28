@@ -1,7 +1,20 @@
 export const projectsData = [
-  // ─── Project 1: StudyNook ───
+  //─── Project 1: Ghurni ───
   {
     id: 1,
+    title: "Ghurni",
+    image: "/projects/ghurni.png",
+    shortDesc: "A full-stack travel ticket booking platform for bus, train, launch & plane across Bangladesh.",
+    stack: ["Next.js", "React", "Tailwind CSS", "MongoDB", "Express.js", "Better Auth", "Stripe", "HeroUI", "Framer Motion"],
+    description: "Ghurni is a complete online ticket booking platform built with the MERN stack + Next.js. It supports three user roles — Traveller, Vendor, and Admin. Travellers can browse, search, filter, and book tickets. Vendors can add and manage their tickets with admin approval. Admins can manage users, approve tickets, advertise featured tickets on the homepage, and monitor platform stats. Stripe integration handles secure payments with BDT conversion.",
+    liveLink: "https://ghurni.vercel.app",
+    githubLink: "https://github.com/ORNOB-083/Ghurni-Online-Ticket-Booking-Platform",
+    challenges: "Implementing session-based JWT auth with Better Auth across both Next.js server components and Express.js API was tricky. Route ordering in Express (advertised route before :id), CORS configuration on Vercel deployment, and real-time countdown timers synced with departure dates were key challenges. Dark/light mode with transparent navbar on scroll also required careful state management.",
+    futurePlans: "Add PDF ticket download after payment, live seat map for bus routes, SMS notifications for booking updates, and React Hook Form for better form validation.",
+  },
+  // ─── Project 2: StudyNook ───
+  {
+    id: 2,
     title: "StudyNook – Study Room Booking Platform",
     image: "/projects/study-nook.png",
     shortDesc: "A full-stack study room booking platform where students can discover, book, and manage study spaces in real time.",
@@ -12,9 +25,9 @@ export const projectsData = [
     challenges: "Implementing JWT authentication with HTTP-only cookies and JWKS verification using Better Auth was a significant learning curve. Managing the authentication state across the entire application and ensuring protected routes worked correctly required careful planning. The booking conflict detection with MongoDB operators also needed precise query logic to prevent overlaps effectively.",
     futurePlans: "Add email notifications for booking confirmations and reminders, integrate payment processing for hourly rates, implement a calendar view for room availability, and add a rating/review system for rooms.",
   },
-  // ─── Project 2: SkillSphere ───
+  // ─── Project 3: SkillSphere ───
   {
-    id: 2,
+    id: 3,
     title: "SkillSphere – Online Learning Platform",
     image: "/projects/skillsphere.png",
     shortDesc: "A modern online learning platform to explore courses, watch lessons, and enroll in skill-based programs.",
@@ -25,9 +38,9 @@ export const projectsData = [
     challenges: "Integrating BetterAuth with Next.js App Router for authentication was tricky. Managing protected routes and redirects after login took careful planning. Implementing the search functionality with dynamic filtering on the All Courses page also required state management.",
     futurePlans: "Add payment integration, course progress tracking, quiz modules, and a discussion forum for students.",
   },
-  // ─── Project 3: MediScan AI ───
+  // ─── Project 4: MediScan AI ───
   {
-    id: 3,
+    id: 4,
     title: "MediScan AI – AI Health Triage System",
     image: "/projects/MediScan-AI.png",
     shortDesc: "Multi-modal AI health triage system supporting symptom text, Bengali voice commands, and medical scan uploads (X-ray, MRI, CT, blood reports).",
@@ -38,9 +51,9 @@ export const projectsData = [
     challenges: "Integrating Bengali voice recognition with real-time transcription was complex due to limited libraries. Handling large medical image uploads (up to 10MB) and processing them through Gemini API while maintaining performance required careful optimisation. Managing authentication state across the dashboard and scan history also posed challenges.",
     futurePlans: "Add support for more scan types (ultrasound, pathology slides), offline mode for rural areas, integration with local hospital APIs, and multi-language support (Chittagonian, Sylheti).",
   },
-  // ─── Project 4: DigiTools ───
+  // ─── Project 5: DigiTools ───
   {
-    id: 4,
+    id: 5,
     title: "DigiTools – Digital Tools Marketplace",
     image: "/projects/digitools.png",
     shortDesc: "A modern digital tools marketplace where users can browse and purchase productivity tools.",
@@ -51,9 +64,9 @@ export const projectsData = [
     challenges: "Managing the cart state across different components without a global state management tool was tricky. Ensuring the cart updates instantly when items are added or removed required careful state synchronization.",
     futurePlans: "Add user authentication, payment gateway integration, product reviews, and a wishlist feature.",
   },
-  // ─── Project 5: 8-Puzzle Solver ───
+  // ─── Project 6: 8-Puzzle Solver ───
   {
-    id: 5,
+    id: 6,
     title: "8-Puzzle Solver – AI-Powered Puzzle Game",
     image: "/projects/puzzle-solver.png",
     shortDesc: "An interactive 8-puzzle game with an AI hint system powered by BFS, Best-First Search, and A* algorithms, built with Next.js and Python FastAPI.",
@@ -64,9 +77,9 @@ export const projectsData = [
     challenges: "Implementing the A* algorithm with an admissible Manhattan distance heuristic and correctly reconstructing the solution path using a parent dictionary was the core challenge. Handling the Next.js hydration mismatch caused by Math.random() running on both server and client required initializing the board with a fixed state and shuffling only inside useEffect. Setting up CORS correctly between the Vercel frontend and Render backend (trailing slash issue) also took debugging.",
     futurePlans: "Add 15-puzzle mode (4×4 grid), animated step-by-step solution replay, side-by-side algorithm comparison showing nodes explored and time taken, and a leaderboard for fastest manual solves.",
   },
-  // ─── Project 6: SavePaws Club ───
+  // ─── Project 7: SavePaws Club ───
   {
-    id: 6,
+    id: 7,
     title: "SavePaws Club – Animal Rescue Platform",
     image: "/projects/savepaws.png",
     shortDesc: "A web-based platform to report and rescue animals with live location sharing.",
@@ -77,9 +90,9 @@ export const projectsData = [
     challenges: "Integrating Google Maps API for live location tracking was complex. Building the emergency offline mode that works without internet required creative solutions using local storage and service workers.",
     futurePlans: "Add GPS rescue vans tracking, volunteer training modules, a mobile app, and multi-language support.",
   },
-  // ─── Project 7: KeenKeeper ───
+  // ─── Project 8: KeenKeeper ───
   {
-    id: 7,
+    id: 8,
     title: "KeenKeeper – Personal Relationship Management",
     image: "/projects/keen-keeper.png",
     shortDesc: "A sophisticated PRM tool to help users maintain consistent connections with their network.",
@@ -90,9 +103,9 @@ export const projectsData = [
     challenges: "Building the interactive charts with Recharts and making them responsive was challenging. Also, managing the status badges (Overdue, Almost Due, On-Track) with real-time updates required careful state management.",
     futurePlans: "Add reminders for follow-ups, integration with calendar APIs and AI-powered relationship insights.",
   },
-  // ─── Project 8: GitHub Issue Tracker ───
+  // ─── Project 9: GitHub Issue Tracker ───
   {
-    id: 8,
+    id: 9,
     title: "GitHub Issue Tracker",
     image: "/projects/github-issue-tracker.png",
     shortDesc: "A web app to track GitHub issues with filtering, searching, and detailed views.",
@@ -103,9 +116,9 @@ export const projectsData = [
     challenges: "Handling the API calls and managing the loading states elegantly was tough. Implementing the search functionality while keeping the tabs functional required careful logic to avoid breaking the filtering system.",
     futurePlans: "Add pagination, user authentication, ability to create/edit issues, and real-time updates via WebSockets.",
   },
-  // ─── Project 9: Job Tracker ───
+  // ─── Project 10: Job Tracker ───
   {
-    id: 9,
+    id: 10,
     title: "Job Tracker",
     image: "/projects/job-tracker.png",
     shortDesc: "A job application tracker with interview and rejection management.",
