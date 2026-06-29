@@ -71,7 +71,7 @@ export default function Hero() {
             <div className="absolute inset-0 pointer-events-none z-0 text-[#6b21a8] dark:text-[#c4b5fd] opacity-40 dark:opacity-30">
 
                 {/* ✨ Floating Code Block (Top Left) */}
-                <motion.div className="absolute top-[15%] left-[5%] font-mono text-xs rotate-2" animate={{ y: [0, -15, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}>
+                <motion.div className="absolute top-[10%] left-[5%] font-mono text-xs rotate-2" animate={{ y: [0, -15, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}>
                     <span className="text-[#7c3aed] dark:text-[#a78bfa]">console</span><span className="text-[#6b21a8] dark:text-[#c4b5fd]">.log</span><span className="text-[#c026d3] dark:text-[#e879f9]">(&quot;hello visitor&quot;);</span>
                 </motion.div>
 
