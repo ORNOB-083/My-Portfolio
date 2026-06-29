@@ -186,7 +186,7 @@ export default function Hero() {
                     <motion.div variants={childVariants} className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center md:justify-start items-center">
                         {/* Download CV Button with Pulse & Hover */}
                         <motion.a
-                            href="/Shalehin_Ahmed_Ornob_Resume.pdf"
+                            href="/Shalehin_Ahmed_Ornob_Full_Stack_Web_Developer.pdf"
                             download
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}

@@ -14,12 +14,47 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isDark, setIsDark] = useState(null);
 
+  const [activeSection, setActiveSection] = useState("home");
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const sectionIds = navLinks.map((link) => link.toLowerCase());
+    const sections = sectionIds.map((id) => document.getElementById(id));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+            if (window.location.hash !== `#${entry.target.id}`) {
+              window.history.replaceState(null, "", `#${entry.target.id}`);
+            }
+          }
+        });
+      },
+      {
+        rootMargin: "-20% 0px -30% 0px",
+        threshold: 0.1,
+      }
+    );
+
+    sections.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, []);
+
+  // Theme logic
   useLayoutEffect(() => {
     const saved = localStorage.getItem("portfolio-theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -43,14 +78,9 @@ export default function Navbar() {
     }
   };
 
-  const handleLinkClick = () => setIsOpen(false);
-
-  const isActive = (link) => {
-    if (typeof window !== "undefined") {
-      if (link === "Home" && window.location.hash === "") return true;
-      return window.location.hash === `#${link.toLowerCase()}`;
-    }
-    return false;
+  const handleLinkClick = (link) => {
+    setActiveSection(link.toLowerCase());
+    setIsOpen(false);
   };
 
   if (isDark === null) return null;
@@ -81,12 +111,12 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => {
-            const active = isActive(link);
+            const active = activeSection === link.toLowerCase();
             return (
               <Link
                 key={link}
                 href={`#${link.toLowerCase()}`}
-                onClick={handleLinkClick}
+                onClick={() => handleLinkClick(link)}
                 className={`px-5 py-2 rounded-full text-base font-medium transition-all duration-300 ${active
                     ? "bg-white dark:bg-[#7c3aed]/40 text-gray-900 dark:text-[#e9d5ff] shadow-sm"
                     : "text-gray-600 dark:text-[#c4b5fd] hover:bg-gray-200/50 dark:hover:bg-[#7c3aed]/20 hover:text-gray-900 dark:hover:text-white"
@@ -119,7 +149,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu - Fixed without AnimatePresence to prevent "wait" mode error */}
+      {/* Mobile Menu */}
       {isOpen && (
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -133,7 +163,7 @@ export default function Navbar() {
               key={link}
               href={`#${link.toLowerCase()}`}
               className="block px-4 py-3 rounded-xl text-base font-medium text-gray-600 dark:text-[#c4b5fd] hover:bg-gray-200/50 dark:hover:bg-[#7c3aed]/20 hover:text-gray-900 dark:hover:text-white transition-all duration-200"
-              onClick={handleLinkClick}
+              onClick={() => handleLinkClick(link)}
             >
               {link}
             </Link>
